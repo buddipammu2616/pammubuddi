@@ -64,7 +64,7 @@ pipeline{
             steps {
                 script {
                     def readpomversion = readMavenPom file: 'pom.xml'
-                    def nexusrepo = readpomversion.version.endsWith("SNAPSHOT") ? "app-release" : "app-snapshot"
+                    def nexusrepo = readpomversion.version.endsWith("SNAPSHOT") ? "app-snapshot" : "app-release"
                     nexusArtifactUploader artifacts:
                         [
                             [
